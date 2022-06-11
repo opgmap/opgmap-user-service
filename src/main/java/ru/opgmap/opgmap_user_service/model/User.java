@@ -1,9 +1,7 @@
 package ru.opgmap.opgmap_user_service.model;
 
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -35,13 +33,16 @@ public class User implements Model {
     @Embedded
     private Address address;
 
-    @CreationTimestamp
+    @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
 
-    @UpdateTimestamp
-    private LocalDateTime modifiedAt;
+    @Column
+    private LocalDateTime updatedAt;
 
     @Column(columnDefinition = "boolean default false")
     private boolean isVip;
+
+    @Enumerated(EnumType.STRING)
+    private UserStatus status;
 
 }

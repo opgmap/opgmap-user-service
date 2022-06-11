@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.opgmap.opgmap_user_service.model.Address;
+import ru.opgmap.opgmap_user_service.model.UserStatus;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -27,8 +28,10 @@ public class UserDto {
 
     private LocalDateTime createdAt;
 
-    private LocalDateTime modifiedAt;
+    private LocalDateTime updatedAt;
 
     private boolean isVip;
+
+    private UserStatus status;
 
 }
