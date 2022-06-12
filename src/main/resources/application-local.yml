@@ -12,6 +12,8 @@ eureka:
     fetch-registry: true
 
 spring:
+  flyway:
+    default-schema: public
   application:
     name: USER-SERVICE
 
@@ -22,7 +24,7 @@ spring:
     url: jdbc:postgresql://localhost:5433/opgmap_user
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
 
   security:
     oauth2:
