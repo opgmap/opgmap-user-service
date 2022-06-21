@@ -73,6 +73,7 @@ public class UserController {
 
     private List<Affordance> singleUserAffordances(UUID id) {
         return List.of(afford(methodOn(userController).getById(id)),
+                afford(methodOn(userController).delete(null, id)),
                 afford(methodOn(userController).update(null, null, id)));
     }
 
